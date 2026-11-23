@@ -1,0 +1,31 @@
+<div class="banner-page-container">
+  <!-- Cabecera estilo Banner Universitario -->
+  <div class="banner-top-bar">
+    <h2 class="banner-title">Horario de clase</h2>
+    <div class="banner-tools">
+      <span class="icon-tool" title="Imprimir">🖨️</span>
+      <span class="icon-tool" title="Configuración de columnas">⚙️</span>
+    </div>
+  </div>
+
+  <div class="banner-filter-row">
+    <div class="periodo-badge-group">
+      <label for="periodoSelect" class="periodo-label">Periodo:</label>
+      <select id="periodoSelect" class="periodo-select">
+        <option selected>Pregrado Presencial 2026-2</option>
+        <option>Pregrado Presencial 2026-1</option>
+        <option>Pregrado Presencial 2025-2</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tabla Genérica con las materias y horarios -->
+  <div class="banner-table-card">
+    <app-generic-table [dataSource]="horario()"></app-generic-table>
+  </div>
+
+  <!-- Pie de tabla estilo Banner -->
+  <div class="banner-footer-row">
+    <span class="records-counter">Registros: {{ horario().length || 6 }}</span>
+  </div>
+</div>

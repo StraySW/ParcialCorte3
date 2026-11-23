@@ -1,0 +1,96 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar class="sidenav-toolbar">
+      <div class="brand-title">
+        <span class="brand-icon">🏛️</span>
+        <div class="brand-text">
+          <span class="brand-uni">UNIMINUTO</span>
+          <small class="brand-sub">Portal Académico</small>
+        </div>
+      </div>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/inicio" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>Inicio</span>
+      </a>
+      <a mat-list-item routerLink="/materias" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>menu_book</mat-icon>
+        <span matListItemTitle>Trabajo del curso</span>
+      </a>
+      <a mat-list-item routerLink="/calificaciones" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>grade</mat-icon>
+        <span matListItemTitle>Calificaciones</span>
+      </a>
+      <a mat-list-item routerLink="/curriculo" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>account_tree</mat-icon>
+        <span matListItemTitle>Currículo y cursos</span>
+      </a>
+      <a mat-list-item routerLink="/horario" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>calendar_today</mat-icon>
+        <span matListItemTitle>Horario del alumno</span>
+      </a>
+      <a mat-list-item routerLink="/historico" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>history_edu</mat-icon>
+        <span matListItemTitle>Histórico académico</span>
+      </a>
+      <a mat-list-item routerLink="/perfil" routerLinkActive="active-link">
+        <mat-icon matListItemIcon>person</mat-icon>
+        <span matListItemTitle>Información del alumno</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="main-toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span class="portal-header-title">Ingeniería de Sistemas • Sede Engativá</span>
+
+      <span class="toolbar-spacer"></span>
+
+      @if (authService.isLoggedIn()) {
+        <button mat-button [matMenuTriggerFor]="userMenu" class="user-menu-btn">
+          <mat-icon>account_circle</mat-icon>
+          <span>{{ authService.currentUser()?.nombre || 'Estudiante' }}</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+          <a mat-menu-item routerLink="/perfil">
+            <mat-icon>badge</mat-icon>
+            <span>Ver mi perfil</span>
+          </a>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar sesión</span>
+          </button>
+        </mat-menu>
+      } @else {
+        <a mat-button routerLink="/login" class="nav-login-btn">
+          <mat-icon>login</mat-icon>
+          <span>Iniciar sesión</span>
+        </a>
+      }
+    </mat-toolbar>
+
+    <!-- Contenido dinámico de las vistas -->
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

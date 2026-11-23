@@ -1,0 +1,66 @@
+<div class="dashboard-container">
+  <!-- Banner de bienvenida -->
+  <div class="welcome-card">
+    <div class="welcome-text">
+      <span class="tag-periodo">📅 Periodo Académico: Pregrado Presencial 2026-1</span>
+      <h1>Bienvenido, Santiago Waltero Olaya 👋</h1>
+      <p>Portal Académico Universitario • Ingeniería de Sistemas - Campus Engativá / UMD</p>
+    </div>
+    <div class="quick-stats">
+      <div class="stat-box">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Materias Inscritas</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">16.0</span>
+        <span class="stat-label">Horas Semanales</span>
+      </div>
+      <div class="stat-box destacado">
+        <span class="stat-number">3.65</span>
+        <span class="stat-label">Promedio Semestre</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accesos directos a módulos -->
+  <div class="modules-grid">
+    <a routerLink="/materias" class="module-card">
+      <div class="module-icon">📚</div>
+      <h3>Trabajo del curso</h3>
+      <p>Revisa las materias matriculadas, códigos, créditos y NRCs.</p>
+      <span class="link-arrow">Ver asignaturas →</span>
+    </a>
+
+    <a routerLink="/calificaciones" class="module-card">
+      <div class="module-icon">📊</div>
+      <h3>Calificaciones</h3>
+      <p>Consulta notas parciales, definitivas y estado de aprobación.</p>
+      <span class="link-arrow">Ver notas →</span>
+    </a>
+
+    <a routerLink="/horario" class="module-card">
+      <div class="module-icon">⏰</div>
+      <h3>Horario de clases</h3>
+      <p>Distribución de aulas, laboratorios y bloques presenciales.</p>
+      <span class="link-arrow">Ver horario →</span>
+    </a>
+
+    <a routerLink="/perfil" class="module-card">
+      <div class="module-icon">👤</div>
+      <h3>Información del alumno</h3>
+      <p>Datos biográficos, estatus académico y plan de estudios.</p>
+      <span class="link-arrow">Ver perfil →</span>
+    </a>
+  </div>
+
+  <!-- Vista previa de materias con Generic Table -->
+  <section class="preview-section">
+    <div class="section-header">
+      <h2>Asignaturas destacadas del periodo</h2>
+      <a routerLink="/materias" class="btn-ver-todas">Ver todas las materias</a>
+    </div>
+    <div class="tabla-card">
+      <app-generic-table [dataSource]="resumenMaterias()"></app-generic-table>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,77 @@
+<div class="registro-wrapper">
+  <div class="registro-card-container">
+    <!-- Panel visual con diseño institucional -->
+    <div class="registro-visual-panel">
+      <div class="visual-content">
+        <span class="visual-badge">🏛️ UNIMINUTO</span>
+        <h2 class="visual-title">Registro Estudiantil</h2>
+        <p class="visual-quote">
+          Crea tu acceso al Sistema de Gestión Académica de la Facultad de Ingeniería de Sistemas.
+        </p>
+        <div class="visual-footer">
+          <div class="feature-pill">🎓 Plan de Estudios ISUM</div>
+          <div class="feature-pill">📊 Seguimiento de Calificaciones</div>
+          <div class="feature-pill">📅 Horarios y NRC</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel del formulario -->
+    <div class="registro-form-panel">
+      <div class="registro-header">
+        <div class="logo-box">
+          <span class="logo-icon">🏛️</span>
+          <span class="logo-text">UNIMINUTO</span>
+        </div>
+        <h1 class="registro-title">Crear Cuenta</h1>
+        <p class="registro-subtitle">Ingresa tus datos para registrarte como estudiante</p>
+      </div>
+
+      <form [formGroup]="registroForm" (ngSubmit)="registrarse()" class="registro-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cc">Cédula de Ciudadanía *</label>
+            <input id="cc" type="text" formControlName="cc" placeholder="1000000001" [class.input-error]="cc?.invalid && cc?.touched" />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="text" formControlName="telefono" placeholder="3001234567" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombres">Nombres *</label>
+            <input id="nombres" type="text" formControlName="nombres" placeholder="Santiago" [class.input-error]="nombres?.invalid && nombres?.touched" />
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos *</label>
+            <input id="apellidos" type="text" formControlName="apellidos" placeholder="Waltero Olaya" [class.input-error]="apellidos?.invalid && apellidos?.touched" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Institucional *</label>
+          <input id="email" type="email" formControlName="email" placeholder="usuario@uniminuto.edu.co" [class.input-error]="email?.invalid && email?.touched" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña *</label>
+          <input id="password" type="password" formControlName="password" placeholder="••••••••••••" [class.input-error]="password?.invalid && password?.touched" />
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="registroForm.invalid || cargando">
+          @if (cargando) {
+            <span>Registrando...</span>
+          } @else {
+            <span>Completar Registro</span>
+          }
+        </button>
+      </form>
+
+      <div class="registro-footer">
+        <p>¿Ya tienes una cuenta registrada? <a routerLink="/login">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+</div>

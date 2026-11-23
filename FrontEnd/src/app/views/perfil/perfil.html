@@ -1,0 +1,77 @@
+<div class="perfil-layout">
+  <!-- Tarjeta de Identidad del Estudiante -->
+  <div class="perfil-sidebar">
+    <div class="avatar-card">
+      <div class="avatar-icon">🎓</div>
+      <div class="badge-confidencial">🔒 CONFIDENCIAL</div>
+      <h2 class="estudiante-nombre">{{ perfil().nombre_completo }}</h2>
+      <p class="estudiante-id">ID: 000845321</p>
+      <span class="estatus-pill">● {{ perfil().estatus }}</span>
+    </div>
+
+    <div class="programa-info">
+      <h3>Programa Académico</h3>
+      <p class="programa-nombre">{{ perfil().programa }}</p>
+      <p class="plan-tag">Plan: {{ perfil().plan_estudios }}</p>
+    </div>
+  </div>
+
+  <!-- Detalles Biográficos y Generales -->
+  <div class="perfil-content">
+    <div class="info-seccion">
+      <h2>Información biográfica</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Correo electrónico institucional</label>
+          <span class="destacado">{{ perfil().email }}</span>
+        </div>
+        <div class="info-item">
+          <label>Sexo</label>
+          <span>{{ perfil().sexo }}</span>
+        </div>
+        <div class="info-item">
+          <label>Ciudadanía</label>
+          <span>{{ perfil().ciudadania }}</span>
+        </div>
+        <div class="info-item">
+          <label>Contacto de emergencia</label>
+          <span>{{ perfil().contacto_emergencia }}</span>
+        </div>
+        <div class="info-item">
+          <label>Teléfono de emergencia</label>
+          <span>{{ perfil().telefono_emergencia }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-seccion">
+      <h2>Información general</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Nivel de formación</label>
+          <span>{{ perfil().nivel }}</span>
+        </div>
+        <div class="info-item">
+          <label>Semestre / Clase</label>
+          <span>{{ perfil().semestre }}</span>
+        </div>
+        <div class="info-item">
+          <label>Tipo de alumno</label>
+          <span>{{ perfil().tipo_alumno }}</span>
+        </div>
+        <div class="info-item">
+          <label>Campus</label>
+          <span>{{ perfil().campus }}</span>
+        </div>
+        <div class="info-item">
+          <label>Primer periodo al que asistió</label>
+          <span>{{ perfil().primer_periodo }}</span>
+        </div>
+        <div class="info-item">
+          <label>Último periodo matriculado</label>
+          <span>{{ perfil().ultimo_periodo }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

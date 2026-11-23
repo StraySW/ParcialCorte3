@@ -1,0 +1,23 @@
+<div class="banner-page-container">
+  <div class="banner-top-bar">
+    <h2 class="banner-title">Trabajo del curso</h2>
+    <div class="banner-search-box">
+      <input
+        type="text"
+        placeholder="Buscar por título de curso o código de materia (Alt+Y)"
+        class="banner-search-input"
+        #filtro
+        (input)="filtrar(filtro.value)"
+      />
+      <span class="search-icon">🔍</span>
+    </div>
+  </div>
+
+  <div class="banner-table-card">
+    <app-generic-table [dataSource]="materiasFiltradas()"></app-generic-table>
+  </div>
+
+  <div class="banner-copyright">
+    <span>© 2013-2026 Ellucian Company L.P. y sus afiliados. Todos los derechos reservados.</span>
+  </div>
+</div>

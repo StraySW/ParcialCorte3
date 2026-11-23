@@ -1,0 +1,97 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 260px;
+  background-color: #042f2e;
+  color: #ffffff;
+}
+
+.sidenav-toolbar {
+  background-color: #115e59;
+  color: #ffffff;
+  padding: 16px 20px;
+  height: 64px;
+}
+
+.brand-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 26px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-uni {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: #99f6e4;
+  text-transform: uppercase;
+}
+
+mat-nav-list a {
+  color: #ccfbf1 !important;
+  margin: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+mat-nav-list a:hover {
+  background-color: rgba(204, 251, 241, 0.12) !important;
+  color: #ffffff !important;
+}
+
+mat-nav-list a.active-link {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.main-toolbar {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.portal-header-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.user-menu-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-login-btn {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.content-wrapper {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 64px);
+}
