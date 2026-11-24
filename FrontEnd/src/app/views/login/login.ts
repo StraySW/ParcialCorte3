@@ -24,9 +24,9 @@ export class Login implements OnInit {
   cargando = false;
 
   ngOnInit(): void {
-    // Si ya tiene sesión activa, redirige al inicio
+    // Si ya tiene sesión activa, redirige a materias
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/materias']);
     }
   }
 
@@ -73,7 +73,7 @@ export class Login implements OnInit {
             timer: 1400,
             showConfirmButton: false,
           }).then(() => {
-            this.router.navigate(['/inicio']);
+            this.router.navigate(['/materias']);
           });
         } else {
           Swal.fire({

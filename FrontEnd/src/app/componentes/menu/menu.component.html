@@ -17,29 +17,9 @@
       </div>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/inicio" routerLinkActive="active-link">
-        <mat-icon matListItemIcon>dashboard</mat-icon>
-        <span matListItemTitle>Inicio</span>
-      </a>
       <a mat-list-item routerLink="/materias" routerLinkActive="active-link">
         <mat-icon matListItemIcon>menu_book</mat-icon>
         <span matListItemTitle>Trabajo del curso</span>
-      </a>
-      <a mat-list-item routerLink="/calificaciones" routerLinkActive="active-link">
-        <mat-icon matListItemIcon>grade</mat-icon>
-        <span matListItemTitle>Calificaciones</span>
-      </a>
-      <a mat-list-item routerLink="/curriculo" routerLinkActive="active-link">
-        <mat-icon matListItemIcon>account_tree</mat-icon>
-        <span matListItemTitle>Currículo y cursos</span>
-      </a>
-      <a mat-list-item routerLink="/horario" routerLinkActive="active-link">
-        <mat-icon matListItemIcon>calendar_today</mat-icon>
-        <span matListItemTitle>Horario del alumno</span>
-      </a>
-      <a mat-list-item routerLink="/historico" routerLinkActive="active-link">
-        <mat-icon matListItemIcon>history_edu</mat-icon>
-        <span matListItemTitle>Histórico académico</span>
       </a>
       <a mat-list-item routerLink="/perfil" routerLinkActive="active-link">
         <mat-icon matListItemIcon>person</mat-icon>
@@ -67,7 +47,7 @@
       @if (authService.isLoggedIn()) {
         <button mat-button [matMenuTriggerFor]="userMenu" class="user-menu-btn">
           <mat-icon>account_circle</mat-icon>
-          <span>{{ authService.currentUser()?.nombre || 'Estudiante' }}</span>
+          <span>{{ authService.currentUser()?.nombre || 'Santiago Waltero' }}</span>
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
         <mat-menu #userMenu="matMenu">
